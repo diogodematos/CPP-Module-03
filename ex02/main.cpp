@@ -6,17 +6,19 @@
 /*   By: dcarrilh <dcarrilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 16:03:38 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/01/31 14:59:40 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/02/04 15:15:46 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main()
 {
-	ClapTrap Jon;
+	//ClapTrap Jon;
+	ScavTrap Tobias("Tobias");
 
-	Jon.attack("Tobias");
-	Jon.beRepaired(5);
-	Jon.beRepaired(5);
+	Tobias.attack("Alfredo");
+	ScavTrap	Juliao("Juliao");
+	Juliao = Tobias;
+	Tobias.guardGate();
 }

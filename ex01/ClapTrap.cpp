@@ -6,18 +6,18 @@
 /*   By: dcarrilh <dcarrilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:45:21 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/01/31 16:28:34 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/02/04 14:32:05 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _name("Default"), _health(10), _energy(10), _attack(0)
+ClapTrap::ClapTrap() : _name("Default"), _health(100), _energy(50), _attack(20)
 {
 	std::cout << "Claptrap " << _name << " Called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _health(10), _energy(10), _attack(0)
+ClapTrap::ClapTrap(std::string name) : _name(name), _health(100), _energy(50), _attack(20)
 {
 	std::cout << "Claptrap " << _name << " Called" << std::endl;
 }

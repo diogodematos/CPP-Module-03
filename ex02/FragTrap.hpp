@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcarrilh <dcarrilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 16:03:38 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/01/31 14:59:40 by dcarrilh         ###   ########.fr       */
+/*   Created: 2024/02/04 15:18:02 by dcarrilh          #+#    #+#             */
+/*   Updated: 2024/02/04 15:28:47 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_H
+# define FRAGTRAP_H
+
 #include "ClapTrap.hpp"
 
-int	main()
+class FragTrap	: public ClapTrap
 {
-	ClapTrap Jon;
+	public:
+			FragTrap();
+			FragTrap(std::string name);
+			FragTrap(const FragTrap &copy);
+			FragTrap &operator=(const FragTrap &FragTrap);
+			~FragTrap();
 
-	Jon.attack("Tobias");
-	Jon.beRepaired(5);
-	Jon.beRepaired(5);
-}
+			void highFivesGuys(void);
+};
+
+#endif
+
