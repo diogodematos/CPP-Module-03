@@ -6,7 +6,7 @@
 /*   By: dcarrilh <dcarrilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 17:20:38 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/02/04 15:25:55 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/02/04 15:41:28 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class	ScavTrap : public ClapTrap
 			~ScavTrap();
 
 			void	attack(const std::string& target);
-			// void	takeDamage(unsigned int amount);
+			void	takeDamage(unsigned int amount);
 			// void	beRepaired(unsigned int amount);
 
 			void	guardGate();
