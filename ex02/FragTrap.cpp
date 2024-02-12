@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcarrilh <dcarrilh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 15:29:36 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/02/04 15:53:12 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/02/12 15:40:41 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,12 @@ FragTrap::FragTrap(const FragTrap &copy)
 FragTrap &FragTrap::operator=(const FragTrap &fragtrap)
 {
 	if (this != &fragtrap)
+	{
 		_name = fragtrap._name;
+		_health = fragtrap._health;
+		_energy = fragtrap._energy;
+		_attack = fragtrap._attack;
+	}
 	return *this;
 }
 
