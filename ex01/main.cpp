@@ -14,11 +14,13 @@
 
 int	main()
 {
-	//ClapTrap Jon;
 	ScavTrap Tobias("Tobias");
 
+	Tobias.attack("Alfredo");
 	Tobias.attack("Alfredo");
 	ScavTrap	Juliao("Juliao");
 	Juliao = Tobias;
 	Tobias.guardGate();
+	Tobias.beRepaired(5);
+	Tobias.beRepaired(5);
 }

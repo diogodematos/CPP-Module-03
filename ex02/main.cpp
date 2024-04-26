@@ -15,10 +15,9 @@
 
 int	main()
 {
-	// ClapTrap Jonas("Jonas");
-	// ScavTrap Amadeus("Amadeus");
+	ScavTrap Amadeus("Amadeus");
 	FragTrap Alfredo("Alfredo");
-	// Jonas.attack("Tobias");
-	// Alfredo.attack("Tobias");
+	Amadeus.attack("Tobias");
+	Alfredo.beRepaired(50);
 	Alfredo.highFivesGuys();
 }

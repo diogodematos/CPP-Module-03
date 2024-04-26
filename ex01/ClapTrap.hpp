@@ -33,7 +33,7 @@ class	ClapTrap
 		ClapTrap &operator=(const ClapTrap &claptrap);
 		~ClapTrap();
 		
-		void	attack(const std::string& target);
+		void	attack(ClapTrap target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 };

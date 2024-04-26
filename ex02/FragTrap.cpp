@@ -53,27 +53,6 @@ FragTrap::~FragTrap()
 	std::cout << "FragTrap " << _name << " Destroyed!" << std::endl;
 }
 
-void	FragTrap::attack(const std::string& target)
-{
-	if (_energy > 0 && _health > 0)
-	{
-		FragTrap tar(target);
-		std::cout << "FragTrap " << _name << " attacks " << target;
-		std::cout << ", causing " << _attack << " points of damage!" << std::endl;
-		tar.takeDamage(_attack);
-		_energy -= 1;
-	}
-	else
-		std::cout << "FragTrap " << _name << " is Tired or Death" << std::endl;
-}
-
-void	FragTrap::takeDamage(unsigned int amount)
-{
-	_health -= amount;
-	std::cout << "FragTrap " << _name << " lost " << amount;
-	std::cout << " hit points, now have " << _health << " hit points!" << std::endl;
-}
-
 void	FragTrap::highFivesGuys(void)
 {
 	std::cout << "FragTrap " << _name << " give High Fives to everyone!" << std::endl;
