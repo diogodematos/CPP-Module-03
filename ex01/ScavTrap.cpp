@@ -6,7 +6,7 @@
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 14:20:14 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/02/12 15:38:57 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/04/26 16:11:39 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,20 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap &scavtrap)
 		_attack = scavtrap._attack;
 	}
 	return *this;
+}
+
+void	ScavTrap::attack(const std::string& target)
+{
+	if (_energy > 0 && _health > 0)
+	{
+		ClapTrap tar(target);
+		std::cout << "ScavTrap " << _name << " attacks " << target;
+		std::cout << ", causing " << _attack << " points of damage!" << std::endl;
+		tar.takeDamage(_attack);
+		_energy -= 1;
+	}
+	else
+		std::cout << "ScavTrap " << _name << " is Tired or Death" << std::endl;
 }
 
 ScavTrap::~ScavTrap()

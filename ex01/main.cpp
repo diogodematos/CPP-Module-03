@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcarrilh <dcarrilh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 16:03:38 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/02/04 15:15:46 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/04/26 16:11:25 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	main()
 {
-	ScavTrap Tobias("Tobias");
+	ScavTrap Tobias;
 
+	Tobias.attack("Alfredo");
 	Tobias.attack("Alfredo");
 	Tobias.attack("Alfredo");
 	ScavTrap	Juliao("Juliao");

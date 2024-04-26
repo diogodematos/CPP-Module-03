@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcarrilh <dcarrilh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:36:37 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/01/30 17:16:44 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/04/26 15:56:47 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class	ClapTrap
 		ClapTrap &operator=(const ClapTrap &claptrap);
 		~ClapTrap();
 		
-		void	attack(ClapTrap target);
+		void	attack(const std::string& target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 };
