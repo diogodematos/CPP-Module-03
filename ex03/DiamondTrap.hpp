@@ -6,7 +6,7 @@
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 16:17:05 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/04/26 17:00:16 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/07/29 15:10:37 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ class DiamondTrap : public ScavTrap, public FragTrap
         ~DiamondTrap();
 
         void whoAmI();
+        //void attack(const std::string& target);
+
 };
 
 #endif

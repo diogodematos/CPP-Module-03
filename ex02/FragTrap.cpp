@@ -6,7 +6,7 @@
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 15:29:36 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/02/12 15:40:41 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/07/29 16:04:52 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	std::cout << "FragTrap " << _name << " Created" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &copy)
+FragTrap::FragTrap(const FragTrap &copy) : ClapTrap(copy)
 {
 	_name = copy._name;
 		std::cout << "Copy FragTrap " << _name << " Created" << std::endl;

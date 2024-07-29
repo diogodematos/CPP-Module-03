@@ -6,7 +6,7 @@
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 16:27:59 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/04/26 17:34:19 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/07/29 16:16:12 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ DiamondTrap::DiamondTrap(): ClapTrap(), ScavTrap(), FragTrap()
     _health = FragTrap::_health;
     _energy = ScavTrap::_energy;
     _attack = FragTrap::_attack;
+    //attack(const std::string& target) = ScavTrap::attack(const std::string& target);
     std::cout << "DiamondTrap Default Created!" << std::endl;
 }
 
@@ -32,7 +33,7 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(name), Fra
     std::cout << "DiamondTrap " << _name << " Created!" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &copy)
+DiamondTrap::DiamondTrap(const DiamondTrap &copy) : ClapTrap(copy), ScavTrap(copy), FragTrap(copy)
 {
 	_name = copy._name;
     name = copy.name;
@@ -61,3 +62,8 @@ void    DiamondTrap::whoAmI()
 {
     std::cout << "My name is " << _name << "!\nMy Clap name is "<< name << "!" << std::endl;
 }
+
+// void    DiamondTrap::attack(const std::string& target) : ScavTrap()
+// {
+//     attack(const std::string& target) = ScavTrap::attack(const std::string& target);
+// }
