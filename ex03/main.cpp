@@ -6,7 +6,7 @@
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 16:03:38 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/04/26 17:33:40 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/08/04 21:48:12 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,19 @@
 int	main()
 {
 	DiamondTrap Diamond("Tobias");
+	std::cout << std::endl;
 	DiamondTrap Boda;
+	std::cout << std::endl;
 	DiamondTrap Lolita(Boda);
+	std::cout << std::endl;
 	Boda = Diamond;
+	std::cout << std::endl;
 	Boda.attack("Jo");
+	std::cout << std::endl;
 	Lolita.attack("Jo");
+	std::cout << std::endl;
 	Lolita.whoAmI();
+	std::cout << std::endl;
 	Boda.whoAmI();
-	
+	std::cout << std::endl;
 }

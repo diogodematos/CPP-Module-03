@@ -6,7 +6,7 @@
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 15:29:36 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/07/29 16:04:52 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/08/04 20:54:08 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ FragTrap::FragTrap()
 	_health = 100;
 	_energy = 100;
 	_attack = 30;
-	std::cout << "FragTrap Default Created" << std::endl;
+	std::cout << "FragTrap Default Constructor Called" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
@@ -27,13 +27,16 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	_health = 100;
 	_energy = 100;
 	_attack = 30;
-	std::cout << "FragTrap " << _name << " Created" << std::endl;
+	std::cout << "FragTrap " << _name << " Constructor Called" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &copy) : ClapTrap(copy)
 {
 	_name = copy._name;
-		std::cout << "Copy FragTrap " << _name << " Created" << std::endl;
+	_health = copy._health;
+	_energy = copy._energy;
+	_attack = copy._attack;
+	std::cout << "Copy FragTrap Constructor Called" << std::endl;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &fragtrap)
@@ -45,12 +48,13 @@ FragTrap &FragTrap::operator=(const FragTrap &fragtrap)
 		_energy = fragtrap._energy;
 		_attack = fragtrap._attack;
 	}
+	std::cout << "FragTrap Operation Copy Constructor Called" << std::endl;
 	return *this;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap " << _name << " Destroyed!" << std::endl;
+	std::cout << "FragTrap " << _name << " Destructor Called" << std::endl;
 }
 
 void	FragTrap::highFivesGuys(void)

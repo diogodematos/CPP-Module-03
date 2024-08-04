@@ -6,7 +6,7 @@
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 16:03:38 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/04/26 16:11:25 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/08/04 20:21:19 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,20 @@
 int	main()
 {
 	ScavTrap Tobias;
-
 	Tobias.attack("Alfredo");
-	Tobias.attack("Alfredo");
-	Tobias.attack("Alfredo");
+	
+	std::cout << std::endl;
+	
 	ScavTrap	Juliao("Juliao");
-	Juliao = Tobias;
-	Tobias.guardGate();
-	Tobias.beRepaired(5);
-	Tobias.beRepaired(5);
+	Juliao.guardGate();
+	Juliao.attack("Lucas");
+	Juliao.beRepaired(5);
+
+	std::cout << std::endl;
+
+	
+	ScavTrap Matias(Juliao);
+	Matias.beRepaired(100);
+	Matias = Juliao;
+	Matias.beRepaired(100);
 }

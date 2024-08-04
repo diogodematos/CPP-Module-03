@@ -6,7 +6,7 @@
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 16:27:59 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/07/29 16:16:12 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/08/04 21:32:57 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ DiamondTrap::DiamondTrap(): ClapTrap(), ScavTrap(), FragTrap()
     _health = FragTrap::_health;
     _energy = ScavTrap::_energy;
     _attack = FragTrap::_attack;
-    //attack(const std::string& target) = ScavTrap::attack(const std::string& target);
-    std::cout << "DiamondTrap Default Created!" << std::endl;
+    std::cout << "DiamondTrap Default Constructor Called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(name), FragTrap(name)
@@ -30,14 +29,17 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(name), Fra
     _health = FragTrap::_health;
     _energy = ScavTrap::_energy;
     _attack = FragTrap::_attack;
-    std::cout << "DiamondTrap " << _name << " Created!" << std::endl;
+    std::cout << "DiamondTrap " << _name << " Constructor Called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &copy) : ClapTrap(copy), ScavTrap(copy), FragTrap(copy)
 {
 	_name = copy._name;
     name = copy.name;
-		std::cout << "Copy DiamondTrap " << _name << " Created" << std::endl;
+	_health = copy._health;
+	_energy = copy._energy;
+	_attack = copy._attack;
+	std::cout << "Copy DiamondTrap Constructor Called" << std::endl;
 }
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &diamondtrap)
@@ -50,20 +52,16 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &diamondtrap)
 		_energy = diamondtrap._energy;
 		_attack = diamondtrap._attack;
 	}
+    std::cout << "DiamondTrap Operation Copy Constructor Called" << std::endl;
 	return *this;
 }
 
 DiamondTrap::~DiamondTrap()
 {
-    std::cout << "DiamondTrap " << _name << " Destroyed!" << std::endl;
+    std::cout << "DiamondTrap " << _name << " Destructor Called" << std::endl;
 }
 
 void    DiamondTrap::whoAmI()
 {
     std::cout << "My name is " << _name << "!\nMy Clap name is "<< name << "!" << std::endl;
 }
-
-// void    DiamondTrap::attack(const std::string& target) : ScavTrap()
-// {
-//     attack(const std::string& target) = ScavTrap::attack(const std::string& target);
-// }

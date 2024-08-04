@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcarrilh <dcarrilh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:45:21 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/02/04 14:32:05 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/08/04 20:49:47 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,36 @@
 
 ClapTrap::ClapTrap() : _name("Default"), _health(100), _energy(50), _attack(20)
 {
-	std::cout << "Claptrap " << _name << " Called" << std::endl;
+	std::cout << "ClapTrap Default Constructor Called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _health(100), _energy(50), _attack(20)
 {
-	std::cout << "Claptrap " << _name << " Called" << std::endl;
+	std::cout << "ClapTrap " << _name << " Constructor Called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &copy) : _name(copy._name), _health(copy._health), _energy(copy._energy), _attack(copy._attack)
+ClapTrap::ClapTrap(const ClapTrap &copy)
 {
-	std::cout << "Copy Claptrap Called" << std::endl;
+	*this = copy;
+	std::cout << "ClapTrap Copy Constructor Called" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &claptrap)
 {
 	if (this != &claptrap)
+	{
 		_name = claptrap._name;
+		_health = claptrap._health;
+		_energy = claptrap._energy;
+		_attack = claptrap._attack;
+	}
+	std::cout << "ClapTrap Operation Copy Constructor Called" << std::endl;
 	return *this;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Claptrap " << _name << " destroyed" << std::endl;
+	std::cout << "Claptrap " << _name << " Destructor Called" << std::endl;
 }
 
 void	ClapTrap::attack(const std::string& target)
