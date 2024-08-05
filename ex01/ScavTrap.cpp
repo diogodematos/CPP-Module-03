@@ -6,7 +6,7 @@
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 14:20:14 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/08/04 21:24:42 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/08/05 14:45:18 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	ScavTrap::attack(const std::string& target)
 		std::cout << ", causing " << _attack << " points of damage!" << std::endl;
 		tar.takeDamage(_attack);
 		_energy -= 1;
+		std::cout << "Now have " << _energy << " points of energy!" << std::endl;
 	}
 	else
 		std::cout << "ScavTrap " << _name << " is Tired or Death" << std::endl;

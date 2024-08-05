@@ -6,7 +6,7 @@
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:45:21 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/08/04 20:49:38 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/08/05 12:09:32 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	ClapTrap::attack(const std::string& target)
 		std::cout << ", causing " << _attack << " points of damage!" << std::endl;
 		tar.takeDamage(_attack);
 		_energy -= 1;
+		std::cout << "Now have " << _energy << " points of energy!" << std::endl;
 	}
 	else
 		std::cout << "ClapTrap " << _name << " is Tired or Death" << std::endl;
@@ -63,7 +64,7 @@ void	ClapTrap::attack(const std::string& target)
 void	ClapTrap::takeDamage(unsigned int amount)
 {
 	_health -= amount;
-	std::cout << "ClapTrap " << _name << " lost " << amount;
+	std::cout <<  _name << " lost " << amount;
 	std::cout << " hit points, now have " << _health << " hit points!" << std::endl;
 }
 
@@ -72,8 +73,10 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	if (_energy > 0 && _health > 0)
 	{
 		_health += amount;
-	std::cout << "ClapTrap " << _name << " repaired " << amount;
-	std::cout << " hit points, now have " << _health << " hit points!" << std::endl;
+		std::cout << "ClapTrap " << _name << " repaired " << amount;
+		std::cout << " hit points, now have " << _health << " hit points!" << std::endl;
+		_energy -= 1;
+		std::cout << "Now have " << _energy << " points of energy!" << std::endl;
 	}
 	else
 		std::cout << "ClapTrap " << _name << " is Tired or Death" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 16:27:59 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/08/04 21:32:57 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/08/05 14:59:24 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,26 @@
 DiamondTrap::DiamondTrap(): ClapTrap(), ScavTrap(), FragTrap()
 {
     _name = "Default";
-    name = "Default_clap_name";
-    _health = FragTrap::_health;
-    _energy = ScavTrap::_energy;
-    _attack = FragTrap::_attack;
+    ClapTrap::_name = "Default_clap_name";
+    _health = 100;
+    _energy = 50;
+    _attack = 30;
     std::cout << "DiamondTrap Default Constructor Called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(name), FragTrap(name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name)
 {
+    ClapTrap::_name = name + "_clap_name";
     _name = name;
-    this->name = name + "_clap_name";
-    _health = FragTrap::_health;
-    _energy = ScavTrap::_energy;
-    _attack = FragTrap::_attack;
+    _health = 100;
+    _energy = 50;
+    _attack = 30;
     std::cout << "DiamondTrap " << _name << " Constructor Called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &copy) : ClapTrap(copy), ScavTrap(copy), FragTrap(copy)
 {
 	_name = copy._name;
-    name = copy.name;
 	_health = copy._health;
 	_energy = copy._energy;
 	_attack = copy._attack;
@@ -47,7 +46,6 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &diamondtrap)
 	if (this != &diamondtrap)
 	{
 		_name = diamondtrap._name;
-        name = diamondtrap.name;
 		_health = diamondtrap._health;
 		_energy = diamondtrap._energy;
 		_attack = diamondtrap._attack;
@@ -63,5 +61,5 @@ DiamondTrap::~DiamondTrap()
 
 void    DiamondTrap::whoAmI()
 {
-    std::cout << "My name is " << _name << "!\nMy Clap name is "<< name << "!" << std::endl;
+    std::cout << "My name is " << _name << "!\nMy Clap name is "<< ClapTrap::_name << "!" << std::endl;
 }
